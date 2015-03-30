@@ -21,15 +21,29 @@
 @import "bootstrap-sprockets";
 
 body {
-padding-top: 6%;
+  padding-top: 10%;
 }
 
 @import "bootstrap";
 
 .footer {
-margin-top: 10%;
-color: gray;
-a {
-color: gray;
+  margin-top: 10%;
+  color: gray;
+  a {
+    color: gray;
+  }
 }
+
+.form-horizontal .control-label {
+  width: 100px;
+}
+.form-horizontal .controls{
+  margin-left: 120px;
+}
+
+/* if you are using responsive bootstrap */
+@media (max-width: 480px) {
+  .form-horizontal .controls {
+    margin-left: 0;
+  }
 }
