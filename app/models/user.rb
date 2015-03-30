@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
   #:recoverable,
   :rememberable, :trackable, :validatable
   #Setup accessible (or protected) attributes for your model
-
+  has_many :pins
 end
