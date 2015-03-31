@@ -49,5 +49,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #adding gem to precomple assets since rails 4 doesn't do by default
+  gem 'rails_12factor', group: :production
 end
 
