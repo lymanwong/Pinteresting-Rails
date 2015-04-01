@@ -44,6 +44,8 @@ gem 'aws-sdk', '< 2.0'
 #adding gem to precomple assets since rails 4 doesn't do by default
 gem 'rails_12factor', group: :production
 
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
