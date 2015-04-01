@@ -5,6 +5,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
+    # @user = current_user
     @pins = Pin.order("created_at desc")
   end
 
@@ -74,6 +75,6 @@ class PinsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
-      params.require(:pin).permit(:description, :image)
+      params.require(:pin).permit(:description, :image, :image_remote_url)
     end
   end
