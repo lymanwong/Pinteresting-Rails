@@ -1,5 +1,10 @@
 <% if user_signed_in? %>
+<% if @user.name.length == 0 %>
 <h1>Welcome!</h1>
+<h4>Click Edit Profile to add your name.</h4>
+<% else %>
+<h1>Welcome <%= @user.name %>!</h1>
+<% end %>
 <% else %>
 
 <div class="jumbotron">

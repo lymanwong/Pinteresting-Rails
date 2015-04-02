@@ -1,7 +1,6 @@
 class Pin < ActiveRecord::Base
   validates :description, presence:true
   validates :user_id, presence: true
-  has_attached_file :image, styles: { medium: "320x240>"}
   # :storage => :s3,
   # :s3_credentials => {
   #   :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
@@ -9,6 +8,7 @@ class Pin < ActiveRecord::Base
   #   },
   #   :path => ":attachment/:id/:style.:extension",
   #   :bucket => ENV['AWS_BUCKET']
+  has_attached_file :image, styles: { medium: "320x240>"}
   validates_attachment :image, presence: true, content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
   size: { less_than: 5.megabytes }
 
