@@ -4,7 +4,6 @@ ruby '2.1.2'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'pg'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -21,11 +20,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 #adding devise for authentication
-gem 'devise', "~> 3.1.1"
+gem 'devise'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -37,14 +39,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 gem 'simple_form', '3.1.0.rc2'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '< 2.0'
+gem 'faker'
 
 #adding gem to precomple assets since rails 4 doesn't do by default
 gem 'rails_12factor', group: :production
 
-gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,4 +61,3 @@ group :development, :test do
   gem 'spring'
 
 end
-
