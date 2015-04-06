@@ -7,12 +7,22 @@ class PinsController < ApplicationController
   def index
     @user = current_user
     @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @pins }
+      format.js
+    end
   end
 
   # GET /pins/1
   # GET /pins/1.json
   def show
     @pin = Pin.find(params[:id])
+     respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @pin }
+      format.js
+    end
   end
 
   # GET /pins/new
@@ -34,11 +44,9 @@ class PinsController < ApplicationController
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
         format.json { render :show, status: :created, location: @pin }
-        format.js
       else
         format.html { render :new }
         format.json { render json: @pin.errors, status: :unprocessable_entity }
-        format.js
       end
     end
   end
@@ -69,14 +77,14 @@ class PinsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pin
-      @pin = Pin.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def pin_params
-      params.require(:pin).permit(:description, :image, :image_remote_url)
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pin
+    @pin = Pin.find(params[:id])
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def pin_params
+    params.require(:pin).permit(:description, :image, :image_remote_url)
+  end
+end
