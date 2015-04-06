@@ -6,7 +6,7 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @user = current_user
-    @pins = Pin.order("created_at desc")
+    @pins = Pin.order("created_at desc").page(params[:page]).per_page(20)
   end
 
   # GET /pins/1
@@ -34,9 +34,11 @@ class PinsController < ApplicationController
       if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully created.' }
         format.json { render :show, status: :created, location: @pin }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @pin.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

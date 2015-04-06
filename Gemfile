@@ -44,6 +44,8 @@ gem 'simple_form', '3.1.0.rc2'
 gem "paperclip", "~> 4.2"
 gem 'aws-sdk', '< 2.0'
 gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 #adding gem to precomple assets since rails 4 doesn't do by default
 gem 'rails_12factor', group: :production
