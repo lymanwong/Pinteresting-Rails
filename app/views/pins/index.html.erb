@@ -4,4 +4,4 @@
   <%= render @pins %>
 </div>
 
-<%= will_paginate @posts %>
+<%= will_paginate @pins, renderer: BootstrapPagination::Rails %>

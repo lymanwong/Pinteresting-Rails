@@ -14,16 +14,16 @@
 *= require_self
 */
 
-/*$baseFontFamily: Oxygen;
-@import url(http://fonts.googleapis.com/css?family=Oxygen);*/
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
 
-
-@import "bootstrap-sprockets";
+$body-bg: #ecf0f1;
+$font-family-sans-serif: 'Oxygen', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 body {
 padding-top: 10%;
 }
 
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 
